@@ -1,0 +1,108 @@
+.form-container {
+    min-height: 100vh;
+    background: #E1E8EB;
+    padding: 50px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-title {
+    color: #1F3A93;
+    font-size: 2.6rem;
+    margin-bottom: 35px;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(31, 58, 147, 0.15);
+}
+
+.cv-form {
+    width: 100%;
+    max-width: 640px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+    background: #F5F7FA;
+    padding: 45px 35px;
+    border-radius: 22px;
+    box-shadow: 0 16px 40px rgba(31, 58, 147, 0.12);
+}
+
+.cv-form input,
+.cv-form textarea {
+    border: 2px solid #a9bbc8;
+    border-radius: 14px;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+    resize: vertical;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2e3d49;
+    background-color: #ffffff;
+}
+
+.cv-form textarea {
+    grid-column: span 2;
+    min-height: 75px;
+}
+
+.cv-form input::placeholder,
+.cv-form textarea::placeholder {
+    color: #7b8d93;
+    font-weight: 500;
+}
+
+.cv-form input:focus,
+.cv-form textarea:focus {
+    outline: none;
+    border-color: #1F3A93;
+    box-shadow: 0 0 15px #1F3A93aa;
+    background-color: #eef3f6;
+    color: #1f3a93;
+}
+
+.form-buttons {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 22px;
+    margin-top: 12px;
+}
+
+.cv-form button {
+    flex: 1;
+    padding: 18px 0;
+    font-weight: 800;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #f5f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 10px 28px rgba(31, 58, 147, 0.3);
+}
+
+.cv-form button[type='submit'] {
+    background: #1F3A93;
+}
+
+.cv-form button[type='submit']:hover {
+    background: #162b6c;
+    transform: scale(1.07);
+    box-shadow: 0 14px 38px rgba(22, 43, 108, 0.6);
+}
+
+.back-btn {
+    background: #7B8D93;
+    color: #f5f7fa;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(123, 141, 147, 0.35);
+}
+
+.back-btn:hover {
+    background: #5e7076;
+    transform: scale(1.07);
+    box-shadow: 0 10px 28px rgba(94, 112, 118, 0.6);
+}

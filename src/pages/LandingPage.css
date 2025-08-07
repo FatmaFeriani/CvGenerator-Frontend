@@ -1,0 +1,46 @@
+.landing-container {
+    height: 100vh;
+    background: linear-gradient(135deg, #1F3A93, #F5F7FA);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #1F3A93;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.landing-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 10px rgba(31, 58, 147, 0.7);
+}
+
+.landing-sub {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #7B8D93;
+    text-shadow: 1px 1px 6px rgba(31, 58, 147, 0.35);
+}
+
+.start-button {
+    background-color: #1F3A93;
+    color: #F5F7FA;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 18px 48px;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    box-shadow: 0 8px 22px #1F3A93cc;
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #162b6c;
+    box-shadow: 0 12px 32px #162b6ccc;
+    transform: scale(1.1);
+}
