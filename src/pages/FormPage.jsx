@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { generateCv } from '../service/cvService';
 import './FormPage.css';
@@ -6,6 +6,7 @@ import './FormPage.css';
 const FormPage = () => {
     const { templateId } = useParams();
     const navigate = useNavigate();
+    const formRef = useRef(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,10 +16,16 @@ const FormPage = () => {
         await generateCv(jsonData, templateId);
     };
 
+    const Clear = () => {
+        if (formRef.current) {
+            formRef.current.reset();
+        }
+    };
+
     return (
         <div className="form-container">
             <h2 className="form-title">Fill Your CV Info (Template {templateId})</h2>
-            <form className="cv-form" onSubmit={handleSubmit}>
+            <form className="cv-form" onSubmit={handleSubmit} ref={formRef}>
                 <input type="text" name="name" placeholder="Full Name" required />
                 <input type="text" name="professionalTitle" placeholder="Professional Title" />
                 <input type="email" name="email" placeholder="Email" required />
@@ -50,6 +57,7 @@ const FormPage = () => {
 
                 <div className="form-buttons">
                     <button type="submit">Generate CV</button>
+                    <button type="button"  className="clear-btn" onClick={Clear}>Clear Form</button>
                     <button type="button" className="back-btn" onClick={() => navigate('/templates')}>
                         Back to Templates
                     </button>

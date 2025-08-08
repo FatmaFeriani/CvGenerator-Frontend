@@ -66,7 +66,8 @@
     grid-column: span 2;
     display: flex;
     justify-content: space-between;
-    gap: 22px;
+    gap: 18px;
+    flex-wrap: wrap;
     margin-top: 12px;
 }
 
@@ -105,4 +106,17 @@
     background: #5e7076;
     transform: scale(1.07);
     box-shadow: 0 10px 28px rgba(94, 112, 118, 0.6);
+}
+
+.clear-btn {
+    background: #e94e4e;
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(233, 78, 78, 0.3);
+}
+
+.clear-btn:hover {
+    background: #c0392b;
+    transform: scale(1.07);
+    box-shadow: 0 10px 28px rgba(192, 57, 43, 0.6);
 }
