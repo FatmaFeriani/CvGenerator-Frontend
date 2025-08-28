@@ -1,122 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --blue: #1E40AF;
+    --light-blue: #60A5FA;
+    --white: #F5F7FA;
+    --dark: #1F2937;
+    --light: #F3F4F6;
+    --shadow: rgba(31, 58, 147, 0.2);
+    --orange: #FF6200;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 2px 4px var(--shadow);
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 6rem;
+    width: auto;
+    object-fit: contain;
+    background: var(--white);
+
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-button {
+    background: var(--blue);
+    color: var(--light);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background: var(--light-blue);
+    transform: scale(1.05);
+}
+
 .form-container {
     min-height: 100vh;
-    background: #E1E8EB;
-    padding: 50px 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 9rem 1rem 5rem;
+    background: linear-gradient(135deg, var(--blue), var(--light-blue), var(--white));
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+}
+
+.bg {
+    background: linear-gradient(135deg, var(--blue), var(--light-blue), var(--white));
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+}
+
+.content-box {
+    background: linear-gradient(135deg, var(--white), var(--light));
+    border-radius: 1rem;
+    padding: 3rem;
+    max-width: 80rem;
+    width: 100%;
+    box-shadow: 0 4px 12px var(--shadow);
+    border: 2px solid var(--light-blue);
+    animation: scale-in 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form-title {
-    color: #1F3A93;
-    font-size: 2.6rem;
-    margin-bottom: 35px;
-    font-weight: 900;
-    text-align: center;
-    text-shadow: 1px 1px 5px rgba(31, 58, 147, 0.15);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 .cv-form {
     width: 100%;
-    max-width: 640px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 22px;
-    background: #F5F7FA;
-    padding: 45px 35px;
-    border-radius: 22px;
-    box-shadow: 0 16px 40px rgba(31, 58, 147, 0.12);
+    max-width: 40rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: linear-gradient(135deg, var(--white), var(--light));
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.form-section {
+    width: 100%;
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.form-section legend {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
 }
 
 .cv-form input,
 .cv-form textarea {
-    border: 2px solid #a9bbc8;
-    border-radius: 14px;
-    padding: 15px 20px;
-    font-size: 1.05rem;
-    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+    width: 100%;
+    border: 1px solid var(--dark);
+    border-radius: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
     resize: vertical;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #2e3d49;
-    background-color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    color: var(--dark);
+    background: var(--white);
 }
 
 .cv-form textarea {
-    grid-column: span 2;
-    min-height: 75px;
+    min-height: 6rem;
 }
 
 .cv-form input::placeholder,
 .cv-form textarea::placeholder {
-    color: #7b8d93;
-    font-weight: 500;
+    color: var(--dark);
+    opacity: 0.6;
 }
 
 .cv-form input:focus,
 .cv-form textarea:focus {
     outline: none;
-    border-color: #1F3A93;
-    box-shadow: 0 0 15px #1F3A93aa;
-    background-color: #eef3f6;
-    color: #1f3a93;
+    border-color: var(--blue);
+    box-shadow: 0 0 8px var(--shadow);
+    background: var(--light);
 }
 
 .form-buttons {
-    grid-column: span 2;
     display: flex;
-    justify-content: space-between;
-    gap: 18px;
+    justify-content: center;
+    gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 12px;
+    margin-top: 1rem;
 }
 
 .cv-form button {
     flex: 1;
-    padding: 18px 0;
-    font-weight: 800;
-    font-size: 1.15rem;
+    max-width: 12rem;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
     border: none;
-    border-radius: 18px;
+    border-radius: 0.8rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    color: #f5f7fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 10px 28px rgba(31, 58, 147, 0.3);
+    transition: all 0.3s ease;
+    color: var(--light);
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
 .cv-form button[type='submit'] {
-    background: #1F3A93;
+    background: var(--blue);
 }
 
 .cv-form button[type='submit']:hover {
-    background: #162b6c;
-    transform: scale(1.07);
-    box-shadow: 0 14px 38px rgba(22, 43, 108, 0.6);
+    background: var(--light-blue);
+    transform: scale(1.05);
 }
 
 .back-btn {
-    background: #7B8D93;
-    color: #f5f7fa;
-    font-weight: 700;
-    box-shadow: 0 8px 24px rgba(123, 141, 147, 0.35);
+    background: var(--dark);
 }
 
 .back-btn:hover {
-    background: #5e7076;
-    transform: scale(1.07);
-    box-shadow: 0 10px 28px rgba(94, 112, 118, 0.6);
+    background: #374151;
+    transform: scale(1.05);
 }
 
 .clear-btn {
-    background: #e94e4e;
-    color: #ffffff;
-    font-weight: 700;
-    box-shadow: 0 8px 24px rgba(233, 78, 78, 0.3);
+    background: var(--orange);
 }
 
 .clear-btn:hover {
-    background: #c0392b;
-    transform: scale(1.07);
-    box-shadow: 0 10px 28px rgba(192, 57, 43, 0.6);
+    background: #e55b00;
+    transform: scale(1.05);
+}
+
+.footer {
+    background: var(--blue);
+    color: var(--light);
+    padding: 2rem 1rem;
+}
+
+.footer-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .form-title {
+        font-size: 2rem;
+    }
+
+    .nav-content {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .logo {
+        height: 5rem;
+    }
+
+    .content-box {
+        padding: 2rem;
+    }
+
+    .cv-form {
+        padding: 1.5rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-title {
+        font-size: 1.8rem;
+    }
+
+    .nav-button {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .content-box {
+        padding: 1.5rem;
+    }
+
+    .cv-form {
+        padding: 1rem;
+    }
+
+    .form-section {
+        padding: 0.8rem;
+    }
+
+    .form-section legend {
+        font-size: 1.1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scale-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
